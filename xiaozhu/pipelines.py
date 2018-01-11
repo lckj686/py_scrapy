@@ -7,5 +7,11 @@
 
 
 class XiaozhuPipeline(object):
+
     def process_item(self, item, spider):
+        fp = open('./log.txt', 'a+')
+        fp.write('标题:\t\t' + item['title'] + '\n')
+        fp.write('地址：\t\t' + item['address'] + '\n')
+        fp.write('交通情况:\t\t' + item['traffic'] + '\n')
+
         return item
